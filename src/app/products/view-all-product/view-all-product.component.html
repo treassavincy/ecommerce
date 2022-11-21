@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class= "container d-flex">
+        <div class="p-2 ms-2 mt-4 border" style="border-radius: 10px;">
+            <a  (click)="filter('')">
+            <img src="https://i.postimg.cc/057ZJycP/ab7e2b022a4587dd.jpg" style="height: 150px;"  alt=""> </a>
+            <h6 style="text-align: center; text-decoration:none; color:black; height:50px;">All Product</h6>
+        </div>
+        <div class="p-2 ms-2 mt-4 border" style="border-radius: 10px;">
+            <a  (click)="filter(2)">            <img src="https://i.postimg.cc/XvM0xJSx/towards-purchase-modern-fashion-kids-fashion-cute-children-hurry-up-sale-season-discount-sale-little.jpg" style="height: 150px;" alt="">
+            </a>
+            <h6 style="text-align: center; text-decoration:none;  height:50px; color:black;">Fashion</h6>
+        </div>
+        <div class="p-2 ms-2 mt-4 border" style="border-radius: 10px;">
+            <a  (click)="filter(1)">            <img src="https://i.postimg.cc/8cGRbLtD/Screen-Shot-2020-12-10-at-10-48-19-AM.png"  style="height: 100px;" alt="">
+            </a>
+            <h6  style="text-align: center; text-decoration:none; color:black;  height:50px;">Electronics </h6>
+            
+        </div>
+        <div class="p-2 ms-2 mt-4 border" style="border-radius: 10px;">
+            <a  (click)="filter(3)">            <img src="https://i.postimg.cc/YqqgqrPX/d-cultured-je-sf-wm-2-prop-single-golden-ball-1d-brado-jewellery-original-imagahggvcgzftez.jpg"  style="height: 150px;" alt="">
+            </a>
+            <h6  style="text-align: center; text-decoration:none; color:black;  height:50px;">Jewellery</h6>
+        </div>
+    </div>
+</div>
+
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let product of filtercategory  " class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="{{product.productImg}}" style="height: 300px;"alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{product.productName}}</h5>
+                            <!-- Product price-->
+                            {{"Rs."+product.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="products/view-product/{{product.id}}">View Product</a></div>
+                    </div>
+                    </div>   
+            </div>    
+        </div>
+    </div>
+</section>
